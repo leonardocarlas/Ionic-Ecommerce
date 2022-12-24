@@ -1,0 +1,7 @@
+<app-header title="Basketball"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item *ngFor="let shirt of shirts">
+    <app-shirt [shirt]="shirt"></app-shirt>
+  </ion-item>
+</ion-content>

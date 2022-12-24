@@ -1,0 +1,12 @@
+
+<ion-item (click)="openItem(shirt.idProduct)">
+  <div class="card">
+    <ion-img [src]="shirt.src"></ion-img>
+    <div class="info">
+      <p class="model">{{shirt.model}}</p>
+      <p>{{shirt.price | price}}</p>
+      <!-- <ion-label>Sizes: {{shirt.size | availableSizes }}</ion-label> -->
+    </div>
+  </div> 
+</ion-item>
+

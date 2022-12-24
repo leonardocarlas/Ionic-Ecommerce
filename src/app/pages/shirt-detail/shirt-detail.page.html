@@ -1,0 +1,29 @@
+<app-header title="tshirt"></app-header>
+
+<ion-content>
+  <ion-content>
+  <ion-grid>
+    <ion-img [src]="tshirt?.src"></ion-img>
+    <ion-row>
+      <p>{{tshirt?.model}}</p>
+    </ion-row>
+    <ion-row>
+      <p>{{tshirt?.price | price }}</p>
+    </ion-row>
+<!-- Componente per le taglie -->
+      <ion-button #cart shape="round" expand="block" (click) = "addItemToCart()">
+        <ion-label>
+          Add to cart
+        </ion-label> 
+        <ion-icon name="cart-outline"></ion-icon>
+      </ion-button>
+      <ion-button #favorite fill="outline" expand="block" shape="round" (click) = "addItemToFavorite()">
+        <ion-label>
+          Add to favorite
+        </ion-label> 
+        <ion-icon name="heart-outline">
+        </ion-icon>
+      </ion-button>
+    
+  </ion-grid>
+</ion-content>

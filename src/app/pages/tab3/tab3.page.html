@@ -1,0 +1,27 @@
+<app-header title="Cart"></app-header>
+
+<ion-content [fullscreen]="true">
+
+  <div *ngIf="_cartItems.length === 0" class="noCartItems">
+     <p>
+       <ion-label>You have no items in the </ion-label>
+        <ion-icon name="cart-outline"></ion-icon>
+     </p>
+  </div>
+
+  <ng-container *ngIf="_cartItems.length > 0">
+    
+    <ng-container *ngFor="let item of _cartItems">
+      <app-tshirt-order-detail [tshirt]="item"></app-tshirt-order-detail>
+    </ng-container>
+
+
+    <ion-button shape="round" expand="block" (click)="presentAlert()">Proceed to payment</ion-button>
+    <ion-button #empty fill="outline" expand="block" shape="round" (click)="emptyCart()">
+      <ion-label>
+        Empty the cart
+      </ion-label> 
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-button>
+  </ng-container>
+</ion-content>
